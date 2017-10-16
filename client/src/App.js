@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import OwnerPage from './components/owner/OwnerPage.js'
 
 class App extends Component {
   render() {
@@ -8,7 +9,11 @@ class App extends Component {
       <Router>
         <div>
         <NavBar />
-       <h1>Hello World</h1>
+        <Switch>
+          {/* <Route exact path='/' component={HomePage} /> */}
+          {/* <Route exact path='/login' component={LoginPage} /> */}
+          <Route exact path='/owners/:ownerId' component={OwnerPage} />
+        </Switch>
       </div>
       </Router>
       
