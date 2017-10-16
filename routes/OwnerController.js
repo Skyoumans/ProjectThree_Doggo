@@ -14,7 +14,17 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const owner = await Owner.findById(req.params.id)
-    res.json(user)
+    res.json(owner)
+  } catch (error) {
+    res.send(error)
+  }
+})
+
+router.post('/', async (req, res) => {
+  try {
+    const newOwner = new Owner(req.body.owner)
+    const saved = await newOwner.save()
+    res.json(saved)
   } catch (error) {
     res.send(error)
   }
