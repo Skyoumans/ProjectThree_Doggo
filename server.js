@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
+const OwnerController = require('./routes/OwnerController.js')
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/idea-board
 
@@ -16,9 +17,14 @@ connection.on('error', (err) => {
 console.log('Mongoose default connection error: ' + err);
 });
 
+// Middleware
 app.use(express.static(__dirname + '/client/build/'));
 app.use(bodyParser.json());
 
+// Controller routes
+app.use('/api/owners', OwnerController)
+
+//renders React app
 app.get('/', (req,res) => {
 	res.sendFile(__dirname + '/client/build/index.html')
 })
