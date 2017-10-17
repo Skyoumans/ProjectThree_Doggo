@@ -22,7 +22,7 @@ class SignupForm extends Component {
     this.setState({newOwner: updateOwner})
   }
 
-  handleSubmit= async (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault()
     const res = await axios.post('/api/owners', {
       'owner': this.state.newOwner

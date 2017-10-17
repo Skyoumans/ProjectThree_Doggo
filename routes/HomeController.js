@@ -11,4 +11,14 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.post('/', async (req, res) => {
+  try {
+    const newOwner = new Owner(req.body.owner)
+    const saved = await newDog.save()
+    res.json(saved)
+  } catch (error) {
+    res.send(error)
+  }
+})
+
 module.exports = router

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import AddDogForm from './AddDogForm'
 
 class HomePage extends Component {
   state = {
@@ -21,16 +22,21 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <h1>List of Dogs</h1>
-        {this.state.dogs.map(dog => {
-          return(
-            <div>
-              <div>{dog.name}</div>
-              <div><img src={dog.image} /></div>
-            </div>
-          )
-        })}
-      </div>
+        <div>
+          <h1>List of Dogs</h1>
+          {this.state.dogs.map(dog => {
+            return(
+              <div>
+                <div>{dog.name}</div>
+                <div><img src={dog.image} /></div>
+              
+              </div>
+            )
+          })}
+        
+        </div>
+          <AddDogForm />
+        </div>
     )
   }
 }

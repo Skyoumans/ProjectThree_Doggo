@@ -3,15 +3,12 @@ const mongoose = require('mongoose')
 const breedSchema = mongoose.Schema ({
   type: {
     type: String,
-    default: `Breed's name`
   },
   personality: {
     type: String,
-    default: `Breed's Personality`
   },
   energy: {
     type: String,
-    default: `Breed's Energy`
   },
   shedding: {
     type: String,
@@ -26,7 +23,6 @@ const breedSchema = mongoose.Schema ({
 const dogSchema = mongoose.Schema ({
   name: {
     type: String,
-    default: 'Dog Name'
   },
   age: {
     type: Number,
@@ -38,15 +34,12 @@ const dogSchema = mongoose.Schema ({
   },
   fur: {
     type: String,
-    default: `Dog's Fur Color`
   },
   gender: {
     type: String,
-    default: `Dog's Gender`
   },
   location: {
     type: String,
-    default: `Dog's Location`
   },
   image: {
     type: String,
@@ -57,15 +50,12 @@ const dogSchema = mongoose.Schema ({
 const ownerSchema = mongoose.Schema ({
   name: {
     type: String,
-    default: `User's Name`
   },
   userName: {
     type: String,
-    default: `User's Username`
   },
   password: {
     type: String,
-    default: `User's Password`
   },
   memberSince: {
     type: Date,
