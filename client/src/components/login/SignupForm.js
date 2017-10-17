@@ -33,7 +33,7 @@ class SignupForm extends Component {
 
   render() {
     if (this.state.redirectToOwner) {
-      return <Redirect to={`/owners/${this.state.newOwnerId}`} />
+      return <Redirect to={`/owners/${this.state.newOwnerId}/home`} />
     }
     return (
       <div>

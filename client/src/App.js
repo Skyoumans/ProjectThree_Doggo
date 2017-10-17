@@ -12,7 +12,7 @@ class App extends Component {
         <div>
         <NavBar />
         <Switch>
-          <Route exact path='/' component={HomePage} />
+        <Route exact path='/' component={OwnerPage} />
           <Route exact path='/login' component={LoginPage} />
           <Route exact path='/owner/:id' component={HomePage} />
         </Switch>

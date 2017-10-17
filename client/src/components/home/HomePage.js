@@ -23,7 +23,12 @@ class HomePage extends Component {
       <div>
         <h1>List of Dogs</h1>
         {this.state.dogs.map(dog => {
-          return(<div>{dog.name}</div>)
+          return(
+            <div>
+              <div>{dog.name}</div>
+              <div><img src={dog.image} /></div>
+            </div>
+          )
         })}
       </div>
     )
