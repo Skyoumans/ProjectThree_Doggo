@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 
 // Controller routes
 app.use('/api/owners', OwnerController)
-app.use('/api/owners', HomeController)
+app.use('/api/owners/:ownerId/home', HomeController)
 
 //renders React app
 app.get('/', (req,res) => {
