@@ -19,6 +19,17 @@ class HomePage extends Component {
       console.log(error)
     }
   }
+
+  createDog = async (newDog) => {
+    const ownerId = this.props.match.params.id    
+    const res = await axios.post(`/api/owners/${ownerId}/home`, {
+      'dog': newDog
+    })
+    console.log(res)
+
+    this.setState({dogs: res.data.dog})
+  }
+
   render() {
     return (
       <div>
@@ -28,14 +39,14 @@ class HomePage extends Component {
             return(
               <div>
                 <div>{dog.name}</div>
-                <div><img src={dog.image} /></div>
-              
+                <div><img src={dog.image} /></div> 
+                <button>Delete Dog</button>                        
               </div>
             )
           })}
-        
         </div>
-          <AddDogForm />
+
+          <AddDogForm createDog={this.createDog} />
         </div>
     )
   }

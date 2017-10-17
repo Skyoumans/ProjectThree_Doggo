@@ -26,10 +26,7 @@ class AddDogForm extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault()
-    const res = await axios.post(`/api/owners/${this.state.dogId}/home`, {
-      'dog': this.state.newDog
-    })
-    this.setState({redirectToOwner: true, newDogId: res.data._id})
+    this.props.createDog(this.state.newDog)
   }
 
   render() {

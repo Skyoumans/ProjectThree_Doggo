@@ -12,11 +12,9 @@ const breedSchema = mongoose.Schema ({
   },
   shedding: {
     type: String,
-    default: `Breed's Shedding`
   },
   expectancy: {
     type: String,
-    default: `Breed's Life Expectancy`
   },
 })
 

@@ -35,7 +35,7 @@ const juna = new Dog ({
   fur: 'Black and white with small patches of light brown',
   location: 'Macon, GA',
   image: 'https://i.imgur.com/aiV2ZHlt.jpg',
-  breed: [alaskan, {}]
+  breed: [alaskan]
 })
 const coco = new Dog ({
   name: 'Coco',
@@ -45,7 +45,7 @@ const coco = new Dog ({
   fur: 'Chestnut brown with a cream underside',
   location: 'Chicago, IL',
   image: 'https://i.imgur.com/lu9zVK5.jpg',
-  breed: [shiba, {}]
+  breed: [shiba]
 })
 const lilee = new Dog ({
   name: 'Lilee',
@@ -55,7 +55,7 @@ const lilee = new Dog ({
   fur: 'Brown and Gold brindle',
   location: 'Macon, GA',
   image: 'https://i.imgur.com/swZOpGXt.jpg',
-  breed: [bull, {}]
+  breed: [bull]
 })
 
 const skylar = new Owner ({
@@ -64,7 +64,7 @@ const skylar = new Owner ({
   password: 'Bornthisway93',
   memberSince: 'Februrary 2016',
   image: 'https://i.imgur.com/aNt2kxds.jpg',
-  dog: [lilee, {}]
+  dog: [lilee]
 })
 const liz = new Owner ({
   name: 'Liz',
@@ -72,7 +72,7 @@ const liz = new Owner ({
   password: 'DogsIsLife1',
   memberSince: 'July 2010',
   image: 'https://i.imgur.com/ImRMRGgt.jpg',
-  dog: [juna, {}]
+  dog: [juna]
 })
 const sam = new Owner ({
   name: 'Sam',
@@ -80,7 +80,7 @@ const sam = new Owner ({
   password: 'GreenEggsandHam',
   memberSince: 'March 2008',
   image: 'https://i.imgur.com/JzyzRNMt.jpg',
-  dog: [coco, {}]
+  dog: [coco]
 })
 
 Owner.remove({})

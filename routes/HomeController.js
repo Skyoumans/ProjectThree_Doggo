@@ -13,8 +13,12 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const newOwner = new Owner(req.body.owner)
-    const saved = await newDog.save()
+    const owner = await Owner.findById(req.params.ownerId)
+    console.log(owner)
+    const newDog = new Dog(req.body.dog)    
+    owner.dog.push(newDog)
+      const saved = await owner.save()
+      console.log(saved)
     res.json(saved)
   } catch (error) {
     res.send(error)
