@@ -7,7 +7,7 @@ const { Breed, Dog, Owner } = require('./schema.js')
 
 const bull = new Breed ({
   type: 'Staffordshire Bull Terrier',
-  personality: 'Brave, tenacious, a bit stubborn. Also playful, gentle, and clevar',
+  personality: 'Brave, tenacious, a bit stubborn. Also playful, gentle, and clever',
   energy: 'Somewhat active',
   shedding: 'Seasonal',
   expectancy: '12-14 years'

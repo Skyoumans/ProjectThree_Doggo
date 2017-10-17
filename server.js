@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
 const OwnerController = require('./routes/OwnerController.js')
+const HomeController = require('./routes/HomeController')
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/idea-board
 
@@ -23,6 +24,7 @@ app.use(bodyParser.json());
 
 // Controller routes
 app.use('/api/owners', OwnerController)
+app.use('/api/owners', HomeController)
 
 //renders React app
 app.get('/', (req,res) => {
