@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import AddDogForm from './AddDogForm'
+import styled from 'styled-components'
 
 class HomePage extends Component {
   state = {
@@ -30,6 +31,18 @@ class HomePage extends Component {
     this.setState({dogs: res.data.dog})
   }
 
+  updateDog = () => {
+
+  }
+
+  deleteDog = async (dogId) => {
+    console.log('function was hit')
+    const ownerId = this.props.match.params.id
+    const id = dogId
+    const res = await axios.delete(`/api/owners/${ownerId}/home/${id}`)
+    this.setState({dogs: res.data.dog})
+  }
+
   render() {
     return (
       <div>
@@ -38,15 +51,18 @@ class HomePage extends Component {
           {this.state.dogs.map(dog => {
             return(
               <div>
+                <div><img src={dog.image} alt='Dog Image'/></div>
                 <div>{dog.name}</div>
-                <div><img src={dog.image} /></div> 
-                <button>Delete Dog</button>                        
+                <button onClick={() => this.deleteDog(dog._id)}>Delete Dog</button>                        
               </div>
             )
           })}
         </div>
 
-          <AddDogForm createDog={this.createDog} />
+          <AddDogForm 
+          createDog={this.createDog}
+          
+           />
         </div>
     )
   }

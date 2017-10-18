@@ -29,6 +29,11 @@ class AddDogForm extends Component {
     this.props.createDog(this.state.newDog)
   }
 
+  handleDelete = async (event) => {
+    event.preventDefault()
+    this.props.deleteDog(this.state.dog)
+  }
+
   render() {
     if (this.state.redirectToOwner) {
       return <Redirect to={`/owners/${this.state.newOwnerId}/home`} />

@@ -44,7 +44,7 @@ const coco = new Dog ({
   gender: 'Female',
   fur: 'Chestnut brown with a cream underside',
   location: 'Chicago, IL',
-  image: 'https://i.imgur.com/lu9zVK5.jpg',
+  image: 'https://i.imgur.com/lu9zVK5t.jpg',
   breed: [shiba]
 })
 const lilee = new Dog ({
@@ -71,7 +71,7 @@ const liz = new Owner ({
   userName: 'LeapinLizard',
   password: 'DogsIsLife1',
   memberSince: 'July 2010',
-  image: 'https://i.imgur.com/ImRMRGgt.jpg',
+  image: 'https://i.imgur.com/ImRMRGgs.jpg',
   dog: [juna]
 })
 const sam = new Owner ({
@@ -79,7 +79,7 @@ const sam = new Owner ({
   userName: 'SamIAm',
   password: 'GreenEggsandHam',
   memberSince: 'March 2008',
-  image: 'https://i.imgur.com/JzyzRNMt.jpg',
+  image: 'https://i.imgur.com/JzyzRNMs.jpg',
   dog: [coco]
 })
 

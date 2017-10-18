@@ -25,4 +25,18 @@ router.post('/', async (req, res) => {
   }
 })
 
+
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const owner = await Owner.findById(req.params.ownerId)
+    console.log(owner)
+    owner.dog.id(req.params.id).remove()
+    const saved = await owner.save()
+    res.send(saved)
+  } catch (error) {
+    res.send(error)
+  }
+})
+
 module.exports = router
