@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 
 class AddDogForm extends Component {
   state = {
     newDog: {
       name: '',
-      age: 0,
-      weight: 0,
+      age: '',
+      weight: '',
       fur: '',
       gender: '',
       location: '',
@@ -34,13 +33,14 @@ class AddDogForm extends Component {
     this.props.deleteDog(this.state.dog)
   }
 
+
   render() {
     if (this.state.redirectToOwner) {
       return <Redirect to={`/owners/${this.state.newOwnerId}/home`} />
     }
     return (
       <div>
-        <h1>Post Your Dog For Adoption</h1>
+        <h1>Post Your Dog</h1>
         <form onSubmit={this.handleSubmit}>
           <div>
             <input onChange={this.handleChange} name='name' type='text' value={this.state.newDog.name} placeholder='Name' />

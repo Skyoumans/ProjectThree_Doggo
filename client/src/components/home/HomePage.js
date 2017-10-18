@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import AddDogForm from './AddDogForm'
-import styled from 'styled-components'
+import AddDogForm from './AddDogForm.js'
+import EditOwner from './EditOwner.js'
+
 
 class HomePage extends Component {
   state = {
@@ -31,12 +32,7 @@ class HomePage extends Component {
     this.setState({dogs: res.data.dog})
   }
 
-  updateDog = () => {
-
-  }
-
   deleteDog = async (dogId) => {
-    console.log('function was hit')
     const ownerId = this.props.match.params.id
     const id = dogId
     const res = await axios.delete(`/api/owners/${ownerId}/home/${id}`)
@@ -47,11 +43,12 @@ class HomePage extends Component {
     return (
       <div>
         <div>
+          <EditOwner ownerId={this.props.match.params.id}/>
           <h1>List of Dogs</h1>
           {this.state.dogs.map(dog => {
             return(
               <div>
-                <div><img src={dog.image} alt='Dog Image'/></div>
+                <div><img src={dog.image} alt='Dog Pic'/></div>
                 <div>{dog.name}</div>
                 <button onClick={() => this.deleteDog(dog._id)}>Delete Dog</button>                        
               </div>

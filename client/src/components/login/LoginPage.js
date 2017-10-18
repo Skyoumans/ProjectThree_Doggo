@@ -27,7 +27,7 @@ class LoginPage extends Component {
         <h1>Log-In</h1>
         <h3>Please select your Username:</h3>
         {this.state.owners.map(owner => {
-          return(<div><Link key={owner._id} to={`/owner/${owner._id}`}><img src={owner.image} /></Link><br />{owner.userName}</div>)
+          return(<div><Link key={owner._id} to={`/owner/${owner._id}`}><img src={owner.image} alt='Profile' /></Link><br />{owner.userName}</div>)
           
         })}
         <h3>Don't have an account?</h3>
