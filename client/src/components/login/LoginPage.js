@@ -2,6 +2,36 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import SignupForm from './SignupForm.js'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
+
+const LogInStyles = styled.div`
+  font-family: 'Varela Round', sans-serif;
+  h1 {
+    text-align: center;
+    color: #4CAF50;
+
+  }
+  h3 {
+    text-align: center;
+  }
+`
+const ProfileStyles = styled.div`
+  margin: 50px 125px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  img {
+    border-radius: 50%
+  }
+`
+const ProfileText = styled.div`
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+`
+
+
 
 
 class LoginPage extends Component {
@@ -23,16 +53,18 @@ class LoginPage extends Component {
   }
   render() {
     return (
-      <div>
-        <h1>Log-In</h1>
-        <h3>Please select your Username:</h3>
+      <LogInStyles>
+        <h1>Log In</h1>
+        <h3>Please select an Owner</h3>
+        <ProfileStyles>
         {this.state.owners.map(owner => {
-          return(<div><Link key={owner._id} to={`/owner/${owner._id}`}><img src={owner.image} alt='Profile' /></Link><br />{owner.userName}</div>)
+          return(<ProfileText><Link key={owner._id} to={`/owner/${owner._id}`}><img src={owner.image} alt='Profile' /></Link><br />{owner.userName}</ProfileText>)
           
         })}
+        </ProfileStyles>
         <h3>Don't have an account?</h3>
         <SignupForm />
-      </div>
+      </LogInStyles>
     );
   }
 }

@@ -1,6 +1,33 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router'
+import styled from 'styled-components'
+
+const FormStyles = styled.div`
+  form {
+    text-align: center;
+  }
+  input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  button {
+    background-color: #4CAF50;
+    color: #FAEBD7;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    width: 50%;
+  }
+  h1 {
+    text-align: center;
+    color: #4CAF50;
+  }
+`
 
 class SignupForm extends Component {
   state = {
@@ -36,7 +63,7 @@ class SignupForm extends Component {
       return <Redirect to={`/login`} />
     }
     return (
-      <div>
+      <FormStyles>
         <h1>Sign-Up for Doggo</h1>
         <form onSubmit={this.handleSubmit}>
           <div>
@@ -53,7 +80,7 @@ class SignupForm extends Component {
           </div>
           <button>Sign Up</button>
         </form>
-      </div>
+      </FormStyles>
     );
   }
 }

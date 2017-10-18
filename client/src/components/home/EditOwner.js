@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import styled from 'styled-components'
+
 
 class EditOwner extends Component {
   state = {
@@ -25,10 +27,9 @@ class EditOwner extends Component {
   handleSubmit = async (event) => {
     event.preventDefault()
     const newOwnerEdited = this.state.editedOwner._id
-    const res = await axios.patch(`/api/owners/${this.ownerId}`, {
+    const res = await axios.patch(`/api/owners/${this.props.ownerId}`, {
       'owner': this.state.editedOwner
     })
-    this.state.updateOwner(res.data)
     this.setState({redirectToLoginPage: true, newOwnerEdited: res.data._id})
   }
 

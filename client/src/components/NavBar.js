@@ -1,23 +1,49 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
-// This is a stateless component
-// It is much simpler than the class syntax because all you have to do is return JSX.
-// Use these components when you don't need to manipulate state or use 
-// lifecycle methods
+const NavBarBG = styled.div`
+  background-color: #333;
+  overflow: hidden;
+`
+const NavBarLink = styled.div`
+  a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  h1 {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+  }
+`
 
 const NavBar = () => {
   return (
-    <div>
-      <div>
-        {/* Link is the React Router way of navigating to other parts of your app. */}
-        {/* Use this instead of <a/> tags */}
+    <NavBarBG>
+      <NavBarLink>
         <Link to="/">Home</Link>
-      </div>
-      <div>
         <Link to="/login">LogIn</Link>
-      </div>
-    </div>
+        <h1>Doggo</h1>
+      </NavBarLink>
+    </NavBarBG>
   )
 }
 

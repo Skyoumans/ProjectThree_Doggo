@@ -25,20 +25,6 @@ router.post('/', async (req, res) => {
   }
 })
 
-router.patch('/:id', async (req, res) => {
-  const editedOwner = req.body.owner
-  console.log(editedOwner)
-  const owner = await Owner.findById(req.params.id)
-  console.log(owner)
-  owner.name = editedOwner.name
-  owner.userName = editedOwner.userName
-  owner.password = editedOwner.password
-  owner.memberSince = editedOwner.memberSince
-  owner.image = editedOwner.image
-  const saved = await owner.saved()
-  res.json(saved)
-})
-
 
 router.delete('/:id', async (req, res) => {
   try {
