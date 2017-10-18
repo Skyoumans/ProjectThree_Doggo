@@ -7,11 +7,13 @@ const NavBarBG = styled.div`
   overflow: hidden;
 `
 const NavBarLink = styled.div`
-  a {
+  a, h1 {
     float: left;
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     color: #f2f2f2;
-    text-align: center;
+    align-items: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
@@ -22,26 +24,15 @@ const NavBarLink = styled.div`
     background-color: #ddd;
     color: black;
   }
-  h1 {
-    float: right;
-    display: block;
-    color: #f2f2f2;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: bold;
-    text-transform: uppercase;
 
-  }
 `
 
 const NavBar = () => {
   return (
     <NavBarBG>
       <NavBarLink>
-        <Link to="/">Home</Link>
+        <Link to="/">Doggo</Link>
         <Link to="/login">LogIn</Link>
-        <h1>Doggo</h1>
       </NavBarLink>
     </NavBarBG>
   )
