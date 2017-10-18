@@ -2,6 +2,34 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 
+const FormStyles = styled.div`
+form {
+  text-align: center;
+  margin: 30px 300px 30px 100px;
+  
+  
+}
+input {
+  width: 225%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #4CAF50;
+  color: #FAEBD7;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  width: 225%;
+}
+h1 {
+  text-align: center;
+  color: #4CAF50;
+}
+`
 
 class AddDogForm extends Component {
   state = {
@@ -41,7 +69,7 @@ class AddDogForm extends Component {
       return <Redirect to={`/owners/${this.state.newOwnerId}/home`} />
     }
     return (
-      <div>
+      <FormStyles>
         <h1>Post Your Dog</h1>
         <form onSubmit={this.handleSubmit}>
           <div>
@@ -64,7 +92,7 @@ class AddDogForm extends Component {
           </div>
           <button>Add Dog</button>
         </form>
-      </div>
+      </FormStyles>
     );
   }
 }

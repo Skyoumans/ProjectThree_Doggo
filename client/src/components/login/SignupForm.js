@@ -60,7 +60,7 @@ class SignupForm extends Component {
 
   render() {
     if (this.state.redirectToOwner) {
-      return <Redirect to={`/login`} />
+      return <Redirect to={`login`} />
     }
     return (
       <FormStyles>

@@ -4,7 +4,24 @@ import AddDogForm from './AddDogForm.js'
 import EditOwner from './EditOwner.js'
 import styled from 'styled-components'
 
+const FormDirection = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+`
 
+const DoggyPic = styled.div`
+margin: 50px 125px;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: space-between;
+img {
+  height: 125px;
+  width: 125px;
+  border-radius: 50%
+}
+`
 
 class HomePage extends Component {
   state = {
@@ -45,24 +62,26 @@ class HomePage extends Component {
     return (
       <div>
         <div>
-          <EditOwner ownerId={this.props.match.params.id}/>
           <h1>List of Dogs</h1>
           {this.state.dogs.map(dog => {
             return(
               <div>
-                <div><img src={dog.image} alt='Dog Pic'/></div>
+                <DoggyPic><img src={dog.image} alt='Dog Pic'/></DoggyPic>
                 <div>{dog.name}</div>
                 <button onClick={() => this.deleteDog(dog._id)}>Delete Dog</button>                        
               </div>
             )
           })}
         </div>
-
+        <FormDirection>
+          <EditOwner 
+          ownerId={this.props.match.params.id}/>
           <AddDogForm 
-          createDog={this.createDog}
-          
-           />
-        </div>
+          createDog={this.createDog}/>
+        </FormDirection>
+      </div>
+        
+
     )
   }
 }
