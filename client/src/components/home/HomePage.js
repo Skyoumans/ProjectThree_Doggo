@@ -83,6 +83,11 @@ class HomePage extends Component {
               <div>
                 <div><img src={dog.image} alt='Dog Pic'/></div>
                 <h5>{dog.name}</h5>
+                <h5>{dog.age}</h5>
+                <h5>{dog.weight}</h5>
+                <h5>{dog.fur}</h5>
+                <h5>{dog.gender}</h5>
+
                 <button onClick={() => this.deleteDog(dog._id)}>Delete Dog</button>                        
               </div>
             )
