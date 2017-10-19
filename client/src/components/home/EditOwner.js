@@ -4,6 +4,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 const FormStyles = styled.div`
+font-family: 'Varela Round', sans-serif;
 form {
   text-align: center;
 }

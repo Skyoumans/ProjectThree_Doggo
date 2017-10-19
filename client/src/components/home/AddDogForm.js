@@ -3,11 +3,14 @@ import { Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 
 const FormStyles = styled.div`
+font-family: 'Varela Round', sans-serif; 
+h1 {
+  text-align: center;
+  color: #4CAF50;
+} 
 form {
   text-align: center;
   margin: 30px 300px 30px 100px;
-  
-  
 }
 input {
   width: 225%;
@@ -25,10 +28,7 @@ button {
   border: none;
   width: 225%;
 }
-h1 {
-  text-align: center;
-  color: #4CAF50;
-}
+
 `
 
 class AddDogForm extends Component {

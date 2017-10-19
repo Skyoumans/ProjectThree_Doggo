@@ -8,20 +8,35 @@ const FormDirection = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin: 0px 200px 0px 200px;
 `
 
 const DoggyPic = styled.div`
-margin: 50px 125px;
-display: flex;
-flex-wrap: wrap;
-flex-direction: row;
-justify-content: space-between;
-img {
-  height: 125px;
-  width: 125px;
-  border-radius: 50%
-}
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+
+  img {
+    border-radius: 50%
+  }
+  h5 {
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;    
+
+  }
+  button {
+    background-color: #4CAF50;
+    color: #FAEBD7;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    width: 100%;
+    font-family: 'Varela Round', sans-serif;    
+  }
 `
+
+
 
 class HomePage extends Component {
   state = {
@@ -61,18 +76,18 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <div>
-          <h1>List of Dogs</h1>
+        <h1>List of Dogs</h1>
+        <DoggyPic>
           {this.state.dogs.map(dog => {
             return(
               <div>
-                <DoggyPic><img src={dog.image} alt='Dog Pic'/></DoggyPic>
-                <div>{dog.name}</div>
+                <div><img src={dog.image} alt='Dog Pic'/></div>
+                <h5>{dog.name}</h5>
                 <button onClick={() => this.deleteDog(dog._id)}>Delete Dog</button>                        
               </div>
             )
           })}
-        </div>
+        </DoggyPic>
         <FormDirection>
           <EditOwner 
           ownerId={this.props.match.params.id}/>
